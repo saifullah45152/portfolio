@@ -21,9 +21,8 @@ export default function Portfolio() {
           Hi, I’m Saif Ullah 👋
         </motion.h1>
         <p className="text-xl max-w-2xl">
-          Senior Flutter Developer with 5 years of hands-on experience building and deploying mobile
-          & web apps. Leading a team of developers and designers, delivering 25+ successful
-          projects.
+          Senior Flutter Developer with 4 years of hands-on experience building and deploying mobile
+          & web apps. Delivered 25+ successful projects.
         </p>
         <div className="mt-6 flex gap-4">
           <Button
@@ -37,7 +36,7 @@ export default function Portfolio() {
           </Button>
 
           <Button
-            href="https://drive.google.com/file/d/1wRUmyHau1kr4UvRtW4HytsOTmH2CN8R3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1qJrwsEvk3HNFi1Kn5-Pf5kURZCgObOh-/view?usp=sharing"
             target="_blank"
           >
             Download Resume
@@ -63,14 +62,95 @@ export default function Portfolio() {
       <section id="skills" className="py-20 px-6 bg-gray-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-10 text-center">Skills & Tools</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
-            {['Flutter', 'Dart', 'Node.js', 'Firebase', 'REST APIs', 'AWS', 'Git', 'Figma'].map(
-              skill => (
-                <Card key={skill}>
-                  <CardContent className="p-6 font-semibold">{skill}</CardContent>
-                </Card>
-              )
-            )}
+          <div className="space-y-8">
+            {[
+              {
+                category: 'Languages & Frameworks',
+                skills: ['Dart', 'Flutter', 'Node.js', 'JavaScript', 'HTML/CSS', 'PHP'],
+              },
+              {
+                category: 'Architecture',
+                skills: ['Clean Architecture', 'MVVM', 'MVC', 'SOLID Principles'],
+              },
+              {
+                category: 'State Management',
+                skills: ['BloC', 'Provider', 'Riverpod', 'GetX'],
+              },
+              {
+                category: 'Backend & Cloud',
+                skills: [
+                  'Firebase Auth',
+                  'Firestore',
+                  'Storage',
+                  'Cloud Functions',
+                  'Analytics',
+                  'Crashlytics',
+                ],
+              },
+              {
+                category: 'Database',
+                skills: [
+                  'SQLite',
+                  'Hive',
+                  'MongoDB',
+                  'Shared Preferences',
+                  'Drift',
+                  'Secure Storage',
+                ],
+              },
+              {
+                category: 'APIs & Integration',
+                skills: ['REST APIs', 'RESTful', 'GraphQL', 'WebSocket', 'JSON parsing'],
+              },
+              {
+                category: 'UI/UX',
+                skills: [
+                  'Material Design',
+                  'Cupertino',
+                  'Custom Animations',
+                  'Responsive Design',
+                ],
+              },
+              {
+                category: 'Testing',
+                skills: ['Unit Testing', 'Widget Testing', 'Integration Testing'],
+              },
+              {
+                category: 'Tools',
+                skills: ['Android Studio', 'VS Code', 'Git', 'GitHub', 'Postman'],
+              },
+              {
+                category: 'CI/CD & DevOps',
+                skills: [
+                  'GitHub Actions',
+                  'Mobile deployment pipelines',
+                  'Automated testing',
+                  'Release management',
+                ],
+              },
+              {
+                category: 'Other',
+                skills: [
+                  'Stripe',
+                  'PayPal',
+                  'Google Maps',
+                  'Push Notifications',
+                ],
+              },
+            ].map(({ category, skills }) => (
+              <div key={category}>
+                <h3 className="text-lg font-semibold mb-4 text-center sm:text-left">{category}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
+                  {skills.map(skill => (
+                    <Card key={skill}>
+                      <CardContent className="p-4 font-semibold text-sm sm:text-base">
+                        {skill}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -115,9 +195,9 @@ export default function Portfolio() {
             <div className="flex items-start relative">
               <div className="flex-shrink-0 w-7 h-7 bg-indigo-600 rounded-full mt-0"></div>
               <div className="ml-6">
-                <h3 className="text-xl font-semibold">Senior Flutter Developer</h3>
+                <h3 className="text-xl font-semibold">Flutter Developer</h3>
                 <p className="text-sm text-gray-600">
-                  Sanmiwago Inc · Full-time | Sep 2022 – Present · 3 yrs | New York, NY · Remote
+                  Sanmiwago · Dec 2023 – Dec 2025 | New York · Remote
                 </p>
                 <p className="mt-2">
                   Lead a mobile development team in building a complete digital ecosystem of more
@@ -139,7 +219,7 @@ export default function Portfolio() {
                   </li>
                   <li>Designed a real-time staff tip calculator.</li>
                   <li>Integrated video conferencing into remote POS ordering system.</li>
-                  <li>Built internal chat tool for multi-location coordination.</li>
+                  {/* <li>Built internal chat tool for multi-location coordination.</li> */}
                   <li>
                     Reduced crash rates & improved performance across multiple apps via bug fixes,
                     memory optimization, and refactoring.
@@ -160,9 +240,9 @@ export default function Portfolio() {
             <div className="flex items-start relative">
               <div className="flex-shrink-0 w-7 h-7 bg-indigo-600 rounded-full mt-1"></div>
               <div className="ml-6">
-                <h3 className="text-xl font-semibold">Project Manager</h3>
+                <h3 className="text-xl font-semibold">Flutter Developer</h3>
                 <p className="text-sm text-gray-600">
-                  Tosty Devs · Freelance | Dec 2022 – Present · 2 yrs 9 mos | Punjab, Pakistan
+                  Tosty Devs · Dec 2022 – Dec 2023 | Vehari, Pakistan
                 </p>
                 <ul className="list-disc list-inside mt-2 text-lg">
                   <li>
@@ -185,9 +265,9 @@ export default function Portfolio() {
             <div className="flex items-start relative">
               <div className="flex-shrink-0 w-7 h-7 bg-indigo-600 rounded-full mt-1"></div>
               <div className="ml-6">
-                <h3 className="text-xl font-semibold">Flutter Developer</h3>
+                <h3 className="text-xl font-semibold">Junior Flutter Developer</h3>
                 <p className="text-sm text-gray-600">
-                  Tosty Devs · May 2021 – Dec 2022 · 1 yr 8 mos
+                  SkillzUpp Technologies · May 2022 – Dec 2022 | Vehari, Pakistan
                 </p>
                 <ul className="list-disc list-inside mt-2 text-lg">
                   <li>
@@ -216,9 +296,9 @@ export default function Portfolio() {
             <div className="flex items-start relative">
               <div className="flex-shrink-0 w-7 h-7 bg-indigo-600 rounded-full mt-1"></div>
               <div className="ml-6">
-                <h3 className="text-xl font-semibold">Junior Flutter Developer</h3>
+                <h3 className="text-xl font-semibold">Flutter Intern</h3>
                 <p className="text-sm text-gray-600">
-                  SkillzUPP Technologies · Full-time | May 2020 – May 2021 · 1 yr 1 mo | Hybrid
+                  Tagnati · March 2022 – May 2022 | Lahore, Pakistan
                 </p>
                 <ul className="list-disc list-inside mt-2 text-lg">
                   <li>
@@ -249,16 +329,13 @@ export default function Portfolio() {
         <div className="flex justify-center gap-6">
           <Button
             variant="outline"
-            href="https://www.linkedin.com/in/waqad-arshad/"
+            href="https://www.linkedin.com/in/saif-ullah-pathan/"
             target="_blank"
           >
             LinkedIn
           </Button>
-          {/* <Button href="mailto:waqadarshad2@gmail.com"> */}
-          <Button href="mailto&#58;%&#55;7aqa&#100;&#97;%72%&#55;3&#37;6&#56;&#37;6&#49;d&#50;&#64;g&#109;a&#37;6&#57;&#108;&#46;&#99;o%6D">
-            Email Me
-          </Button>
-          <Button variant="outline" href="https://github.com/waqadArshad" target="_blank">
+          <Button href="mailto:saifullah45152@gmail.com">Email Me</Button>
+          <Button variant="outline" href="https://github.com/saifullah45152" target="_blank">
             GitHub
           </Button>
         </div>
@@ -266,7 +343,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="py-6 text-center text-sm bg-gray-900 text-gray-300">
-        © {new Date().getFullYear()} Waqad Arshad. All rights reserved.
+        © {new Date().getFullYear()} Saif Ullah. All rights reserved.
       </footer>
     </div>
   );
