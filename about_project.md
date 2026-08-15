@@ -20,7 +20,7 @@ Personal portfolio website for **Saif Ullah** (Flutter Developer). It is a singl
 | **Helpers** | `class-variance-authority`, `tailwind-merge`, `react-scroll` | UI variants, class merging, smooth scroll |
 | **Backend language** | **None (no custom server API)** | Site is built as a **static export** |
 | **Hosting** | **GitHub Pages** | Static HTML/CSS/JS from `out/` |
-| **CI/CD** | **GitHub Actions** (`.github/workflows/nextjs.yml`) | Build + deploy on push to `master` |
+| **CI/CD** | **GitHub Actions** (`.github/workflows/nextjs.yml`) | Build + deploy on push to `main` |
 
 ### Important notes
 
@@ -171,10 +171,10 @@ Set / update the remote to **your** GitHub repo:
 ```bash
 git remote remove origin
 git remote add origin https://github.com/saifullah45152/portfolio.git
-git branch -M master
+git branch -M main
 git add .
 git commit -m "Prepare portfolio for GitHub Pages"
-git push -u origin master
+git push -u origin main
 ```
 
 #### If git is not initialized yet
@@ -182,10 +182,10 @@ git push -u origin master
 ```bash
 git init
 git remote add origin https://github.com/saifullah45152/portfolio.git
-git branch -M master
+git branch -M main
 git add .
 git commit -m "Initial portfolio commit"
-git push -u origin master
+git push -u origin main
 ```
 
 If GitHub asks you to sign in, complete login (browser / token), then push again.
@@ -244,15 +244,64 @@ That is the same pattern as your friend’s link:
 
 ### Step 7 — Update the site later (any time)
 
-After you edit content locally:
+After you edit content locally, use the **Commands for deploying** section below.
+
+GitHub Actions will rebuild and republish automatically. Refresh the live URL after the Action turns green.
+
+---
+
+## Commands for deploying
+
+Run these from the project root: `c:\0_Flutter_Projects\portfolio`
+
+### First-time deploy (new GitHub repo)
+
+```bash
+git remote add origin https://github.com/saifullah45152/portfolio.git
+git branch -M main
+git add .
+git commit -m "Initial portfolio commit"
+git push -u origin main
+```
+
+If `origin` already exists and points to the old repo:
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/saifullah45152/portfolio.git
+git branch -M main
+git add .
+git commit -m "Prepare portfolio for GitHub Pages"
+git push -u origin main
+```
+
+### Deploy updates (after content changes)
 
 ```bash
 git add .
 git commit -m "Update portfolio content"
-git push origin master
+git push origin main
 ```
 
-GitHub Actions will rebuild and republish automatically. Refresh the live URL after the Action turns green.
+### Check status before pushing
+
+```bash
+git status
+git branch
+git remote -v
+```
+
+You should see branch **`main`** and remote:
+
+`origin  https://github.com/saifullah45152/portfolio.git`
+
+### After you push
+
+1. Open **Actions** on GitHub.
+2. Wait for **Deploy Next.js site to Pages** to turn green.
+3. Open: [https://saifullah45152.github.io/portfolio/](https://saifullah45152.github.io/portfolio/)
+
+The workflow in `.github/workflows/nextjs.yml` runs on every push to **`main`**.
 
 ---
 
@@ -261,7 +310,7 @@ GitHub Actions will rebuild and republish automatically. Refresh the live URL af
 | File | Purpose |
 |------|---------|
 | `next.config.ts` | `output: 'export'`, `basePath: '/portfolio'`, unoptimized images |
-| `.github/workflows/nextjs.yml` | On push to `master`, build Next.js and deploy `./out` to Pages |
+| `.github/workflows/nextjs.yml` | On push to `main`, build Next.js and deploy `./out` to Pages |
 | `app/layout.tsx` | Site title / SEO metadata |
 
 You do **not** need to buy a domain or pay for hosting for this setup.
@@ -274,7 +323,7 @@ You do **not** need to buy a domain or pay for hosting for this setup.
 |---------|-----|
 | Site 404 after deploy | Confirm repo name is `portfolio` and Pages source is **GitHub Actions** |
 | CSS / images broken | Keep `basePath` / `assetPrefix` as `/portfolio` in production |
-| Workflow never runs | Push to branch **`master`** (workflow listens to `master`), or run **Actions → workflow → Run workflow** |
+| Workflow never runs | Push to branch **`main`** (workflow listens to `main`), or run **Actions → workflow → Run workflow** |
 | Wrong username in URL | URL always uses your GitHub username: `saifullah45152.github.io` |
 | Repo name is not `portfolio` | Either rename the repo to `portfolio`, or change `basePath` / `assetPrefix` in `next.config.ts` to `/your-repo-name` |
 
@@ -313,5 +362,5 @@ Project images are expected under paths like `/images/projects/...` (with `baseP
 | Backend language? | **None** — static frontend only |
 | Styling? | **Tailwind CSS v4** |
 | Run locally? | `npm install` → `npm run dev` → http://localhost:3000 |
-| Publish as website? | Create public repo `portfolio` → enable Pages (GitHub Actions) → push to `master` → live at `https://saifullah45152.github.io/portfolio/` |
+| Publish as website? | Create public repo `portfolio` → enable Pages (GitHub Actions) → push to `main` → live at `https://saifullah45152.github.io/portfolio/` |
 | Friend’s example? | [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/) |
