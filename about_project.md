@@ -2,25 +2,25 @@
 
 Personal portfolio website for **Saif Ullah** (Flutter Developer). It is a single-page marketing/portfolio site with hero, about, skills, projects, experience, and contact sections.
 
-**Your live URL (after publish):** [https://saifullah45152.github.io/portfolio/](https://saifullah45152.github.io/portfolio/)  
-**Friend’s example site:** [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/)  
+**Your live URL (after publish):** [https://saifullah45152.github.io/portfolio/](https://saifullah45152.github.io/portfolio/)
+**Friend’s example site:** [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/)
 **Your GitHub:** [https://github.com/saifullah45152](https://github.com/saifullah45152)
 
 ---
 
 ## Tech Stack & Languages
 
-| Layer | Technology | Role |
-|--------|------------|------|
-| **Frontend language** | **TypeScript** (+ JSX/TSX) | All app UI and logic |
-| **UI library** | **React 19** | Components and client interactivity |
-| **Framework** | **Next.js 15** (App Router) | Routing, layout, static export, fonts |
-| **Styling** | **Tailwind CSS v4** + PostCSS | Utility-first styling |
-| **Animation** | **Framer Motion** | Hero and motion effects |
-| **Helpers** | `class-variance-authority`, `tailwind-merge`, `react-scroll` | UI variants, class merging, smooth scroll |
-| **Backend language** | **None (no custom server API)** | Site is built as a **static export** |
-| **Hosting** | **GitHub Pages** | Static HTML/CSS/JS from `out/` |
-| **CI/CD** | **GitHub Actions** (`.github/workflows/nextjs.yml`) | Build + deploy on push to `main` |
+| Layer                 | Technology                                                   | Role                                      |
+| --------------------- | ------------------------------------------------------------ | ----------------------------------------- |
+| **Frontend language** | **TypeScript** (+ JSX/TSX)                                   | All app UI and logic                      |
+| **UI library**        | **React 19**                                                 | Components and client interactivity       |
+| **Framework**         | **Next.js 15** (App Router)                                  | Routing, layout, static export, fonts     |
+| **Styling**           | **Tailwind CSS v4** + PostCSS                                | Utility-first styling                     |
+| **Animation**         | **Framer Motion**                                            | Hero and motion effects                   |
+| **Helpers**           | `class-variance-authority`, `tailwind-merge`, `react-scroll` | UI variants, class merging, smooth scroll |
+| **Backend language**  | **None (no custom server API)**                              | Site is built as a **static export**      |
+| **Hosting**           | **GitHub Pages**                                             | Static HTML/CSS/JS from `out/`            |
+| **CI/CD**             | **GitHub Actions** (`.github/workflows/nextjs.yml`)          | Build + deploy on push to `main`          |
 
 ### Important notes
 
@@ -72,12 +72,81 @@ portfolio/
 
 Install before running locally:
 
-1. **Node.js 20+** (recommended; workflow uses Node 20)  
+1. **Node.js 20+** (recommended; workflow uses Node 20)
    Check: `node -v`
-2. **npm** (comes with Node; repo uses `package-lock.json`)  
+2. **npm** (comes with Node; repo uses `package-lock.json`)
    Check: `npm -v`
 3. **Git** (to clone / push)
 4. A **GitHub account** (yours: `saifullah45152`)
+5. **Visual Studio Code** (recommended editor — see **Editor** below)
+6. **Visual Studio Code** (recommended editor — see **Editor** below)
+7. **Visual Studio Code** (recommended editor — see **Editor** below)
+
+---
+
+## Editor
+
+Any of these editors can be used for this project:
+
+- Visual Studio Code
+- Cursor
+- WebStorm
+- Visual Studio
+- Sublime Text
+- Atom
+- Notepad++
+- Vim
+- Neovim
+- Emacs
+
+### Open this project in VS Code
+
+1. Install VS Code.
+2. Open VS Code.
+3. **File → Open Folder…**
+4. Select this folder: `c:\0_Flutter_Projects\portfolio`
+5. Open the integrated terminal: **Terminal → New Terminal** (`Ctrl + `` ` on Windows)
+
+Then run:
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in the browser. Keep VS Code open while you edit files — Next.js hot reload will refresh the page.
+
+### Main files to edit in VS Code
+
+| File                               | What you change                                  |
+| ---------------------------------- | ------------------------------------------------ |
+| `app/page.tsx`                     | Hero, About, Skills, Experience, Contact, Footer |
+| `components/sections/Projects.tsx` | Project cards and links                          |
+| `app/layout.tsx`                   | Tab title, SEO, metadata                         |
+| `app/globals.css`                  | Global styles                                    |
+| `next.config.ts`                   | GitHub Pages `basePath`                          |
+
+### Recommended VS Code extensions
+
+Install these from the **Extensions** panel (`Ctrl + Shift + X`):
+
+| Extension                                                   | Why                               |
+| ----------------------------------------------------------- | --------------------------------- |
+| **ESLint** (`dbaeumer.vscode-eslint`)                       | Shows lint errors while you type  |
+| **Tailwind CSS IntelliSense** (`bradlc.vscode-tailwindcss`) | Autocomplete for Tailwind classes |
+| **Prettier – Code formatter** (`esbenp.prettier-vscode`)    | Format on save (optional)         |
+| **GitLens** (optional)                                      | See git history in the editor     |
+
+You can also use **Cursor** (VS Code–based) to edit this same folder. Do not use Android Studio for this project — it is a **Next.js website**, not a Flutter app.
+
+### Useful VS Code shortcuts
+
+| Shortcut (Windows) | Action                            |
+| ------------------ | --------------------------------- |
+| `Ctrl + P`         | Quick-open a file by name         |
+| `Ctrl + Shift + F` | Search across the whole project   |
+| `Ctrl + `` `       | Toggle terminal                   |
+| `Ctrl + S`         | Save (needed if auto-save is off) |
 
 ---
 
@@ -105,12 +174,12 @@ Hot reload is enabled — edits under `app/` and `components/` refresh automatic
 
 ### Useful scripts
 
-| Command | What it does |
-|---------|----------------|
-| `npm run dev` | Local development server |
-| `npm run build` | Production build (static `out/` when `NODE_ENV=production`) |
+| Command         | What it does                                                          |
+| --------------- | --------------------------------------------------------------------- |
+| `npm run dev`   | Local development server                                              |
+| `npm run build` | Production build (static `out/` when `NODE_ENV=production`)           |
 | `npm run start` | Serve a Next.js production server (less relevant for static GH Pages) |
-| `npm run lint` | Run ESLint |
+| `npm run lint`  | Run ESLint                                                            |
 
 ### Local vs production paths
 
@@ -125,7 +194,7 @@ So locally you use `http://localhost:3000`, while the published URL will be `htt
 
 ## Publish as website
 
-This is how your friend published [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/).  
+This is how your friend published [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/).
 You will get the same kind of free public link:
 
 **https://saifullah45152.github.io/portfolio/**
@@ -144,7 +213,7 @@ The project is already prepared for GitHub Pages (static export + GitHub Actions
 ### Step 1 — Create a GitHub repository
 
 1. Open [https://github.com/new](https://github.com/new) while logged in as **saifullah45152**.
-2. Set **Repository name** to exactly: `portfolio`  
+2. Set **Repository name** to exactly: `portfolio`
    (This name matters. The URL becomes `username.github.io/portfolio/`.)
 3. Choose **Public**.
 4. Do **not** add a README / .gitignore / license if this folder already has a project (avoids merge conflicts).
@@ -196,12 +265,12 @@ If GitHub asks you to sign in, complete login (browser / token), then push again
 
 Before or after the first push, update URLs in `app/layout.tsx` from the old friend’s domain to yours:
 
-| Setting | Change to |
-|---------|-----------|
-| `metadataBase` | `https://saifullah45152.github.io/portfolio` |
-| `authors` name / url | Saif Ullah + your portfolio URL |
-| Open Graph `url` / `siteName` | Your name + `https://saifullah45152.github.io/portfolio/` |
-| Twitter / titles mentioning old name | Saif Ullah |
+| Setting                              | Change to                                                 |
+| ------------------------------------ | --------------------------------------------------------- |
+| `metadataBase`                       | `https://saifullah45152.github.io/portfolio`              |
+| `authors` name / url                 | Saif Ullah + your portfolio URL                           |
+| Open Graph `url` / `siteName`        | Your name + `https://saifullah45152.github.io/portfolio/` |
+| Twitter / titles mentioning old name | Saif Ullah                                                |
 
 `next.config.ts` already uses `basePath: '/portfolio'` — keep that **as long as the repo is named `portfolio`**.
 
@@ -237,7 +306,7 @@ When the workflow succeeds, open:
 
 That is the same pattern as your friend’s link:
 
-`https://waqadarshad.github.io/portfolio/`  
+`https://waqadarshad.github.io/portfolio/`
 → `https://YOUR_USERNAME.github.io/REPO_NAME/`
 
 ---
@@ -307,11 +376,11 @@ The workflow in `.github/workflows/nextjs.yml` runs on every push to **`main`**.
 
 ### What is already configured in this project
 
-| File | Purpose |
-|------|---------|
-| `next.config.ts` | `output: 'export'`, `basePath: '/portfolio'`, unoptimized images |
-| `.github/workflows/nextjs.yml` | On push to `main`, build Next.js and deploy `./out` to Pages |
-| `app/layout.tsx` | Site title / SEO metadata |
+| File                           | Purpose                                                          |
+| ------------------------------ | ---------------------------------------------------------------- |
+| `next.config.ts`               | `output: 'export'`, `basePath: '/portfolio'`, unoptimized images |
+| `.github/workflows/nextjs.yml` | On push to `main`, build Next.js and deploy `./out` to Pages     |
+| `app/layout.tsx`               | Site title / SEO metadata                                        |
 
 You do **not** need to buy a domain or pay for hosting for this setup.
 
@@ -319,12 +388,12 @@ You do **not** need to buy a domain or pay for hosting for this setup.
 
 ### Common problems
 
-| Problem | Fix |
-|---------|-----|
-| Site 404 after deploy | Confirm repo name is `portfolio` and Pages source is **GitHub Actions** |
-| CSS / images broken | Keep `basePath` / `assetPrefix` as `/portfolio` in production |
-| Workflow never runs | Push to branch **`main`** (workflow listens to `main`), or run **Actions → workflow → Run workflow** |
-| Wrong username in URL | URL always uses your GitHub username: `saifullah45152.github.io` |
+| Problem                      | Fix                                                                                                                  |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Site 404 after deploy        | Confirm repo name is `portfolio` and Pages source is **GitHub Actions**                                              |
+| CSS / images broken          | Keep `basePath` / `assetPrefix` as `/portfolio` in production                                                        |
+| Workflow never runs          | Push to branch **`main`** (workflow listens to `main`), or run **Actions → workflow → Run workflow**                 |
+| Wrong username in URL        | URL always uses your GitHub username: `saifullah45152.github.io`                                                     |
 | Repo name is not `portfolio` | Either rename the repo to `portfolio`, or change `basePath` / `assetPrefix` in `next.config.ts` to `/your-repo-name` |
 
 ---
@@ -341,13 +410,13 @@ You can also deploy with [Vercel](https://vercel.com) by connecting the same Git
 
 ## Content Editing Guide
 
-| Want to change… | Edit… |
-|-----------------|--------|
-| Hero / About / Skills / Experience / Contact | `app/page.tsx` |
-| Project list, images, store links | `components/sections/Projects.tsx` |
-| Site title, description, OG tags | `app/layout.tsx` |
-| Colors / global CSS | `app/globals.css` |
-| Buttons / cards look | `components/ui/*` |
+| Want to change…                              | Edit…                              |
+| -------------------------------------------- | ---------------------------------- |
+| Hero / About / Skills / Experience / Contact | `app/page.tsx`                     |
+| Project list, images, store links            | `components/sections/Projects.tsx` |
+| Site title, description, OG tags             | `app/layout.tsx`                   |
+| Colors / global CSS                          | `app/globals.css`                  |
+| Buttons / cards look                         | `components/ui/*`                  |
 
 Project images are expected under paths like `/images/projects/...` (with `basePath` prepended in production). Place assets in `public/images/projects/` so they are served as `/images/projects/...`.
 
@@ -355,12 +424,13 @@ Project images are expected under paths like `/images/projects/...` (with `baseP
 
 ## Summary
 
-| Question | Answer |
-|----------|--------|
-| Frontend language? | **TypeScript** + **React** |
-| Framework? | **Next.js 15** |
-| Backend language? | **None** — static frontend only |
-| Styling? | **Tailwind CSS v4** |
-| Run locally? | `npm install` → `npm run dev` → http://localhost:3000 |
+| Question            | Answer                                                                                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Frontend language?  | **TypeScript** + **React**                                                                                                              |
+| Framework?          | **Next.js 15**                                                                                                                          |
+| Backend language?   | **None** — static frontend only                                                                                                         |
+| Styling?            | **Tailwind CSS v4**                                                                                                                     |
+| Editor?             | Visual Studio Code, Cursor, WebStorm, Visual Studio, Sublime Text, Atom, Notepad++, Vim, Neovim, Emacs                                  |
+| Run locally?        | `npm install` → `npm run dev` → http://localhost:3000                                                                                   |
 | Publish as website? | Create public repo `portfolio` → enable Pages (GitHub Actions) → push to `main` → live at `https://saifullah45152.github.io/portfolio/` |
-| Friend’s example? | [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/) |
+| Friend’s example?   | [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/)                                                    |
