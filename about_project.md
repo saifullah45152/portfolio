@@ -1,9 +1,10 @@
 # About This Project
 
-Personal portfolio website for **Waqad Arshad** (Senior Flutter Developer). It is a single-page marketing/portfolio site with hero, about, skills, projects, experience, and contact sections.
+Personal portfolio website for **Saif Ullah** (Flutter Developer). It is a single-page marketing/portfolio site with hero, about, skills, projects, experience, and contact sections.
 
-**Live site (configured):** [https://waqadarshad.github.io/portfolio](https://waqadarshad.github.io/portfolio)  
-**GitHub repo:** [https://github.com/waqadArshad/portfolio](https://github.com/waqadArshad/portfolio)
+**Your live URL (after publish):** [https://saifullah45152.github.io/portfolio/](https://saifullah45152.github.io/portfolio/)  
+**Friend’s example site:** [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/)  
+**Your GitHub:** [https://github.com/saifullah45152](https://github.com/saifullah45152)
 
 ---
 
@@ -76,6 +77,7 @@ Install before running locally:
 2. **npm** (comes with Node; repo uses `package-lock.json`)  
    Check: `npm -v`
 3. **Git** (to clone / push)
+4. A **GitHub account** (yours: `saifullah45152`)
 
 ---
 
@@ -117,70 +119,174 @@ Hot reload is enabled — edits under `app/` and `components/` refresh automatic
 - **Development:** `basePath` and `assetPrefix` empty → site at `/`
 - **Production:** `basePath: '/portfolio'`, `assetPrefix: '/portfolio/'` → site at `/portfolio` on GitHub Pages
 
-So locally you use `http://localhost:3000`, while the published URL is `https://waqadarshad.github.io/portfolio/`.
+So locally you use `http://localhost:3000`, while the published URL will be `https://saifullah45152.github.io/portfolio/`.
 
 ---
 
-## How to Publish as a Site on GitHub Pages
+## Publish as website
 
-This repo is already set up for GitHub Pages with static export + Actions.
+This is how your friend published [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/).  
+You will get the same kind of free public link:
 
-### What is already configured
+**https://saifullah45152.github.io/portfolio/**
 
-1. **`next.config.ts`**
-   - `output: 'export'` in production → builds static files into `out/`
-   - `basePath` / `assetPrefix`: `/portfolio` (matches repo name)
-   - `images.unoptimized: true` (required for static hosting)
+The project is already prepared for GitHub Pages (static export + GitHub Actions). Follow the steps below once.
 
-2. **`.github/workflows/nextjs.yml`**
-   - Triggers on push to **`master`** (and manual `workflow_dispatch`)
-   - Installs deps, runs `next build`, uploads `./out`, deploys to Pages
+### How it works (simple)
 
-3. **SEO `metadataBase`** in `app/layout.tsx` points to  
-   `https://waqadarshad.github.io/portfolio`
+1. You push code to a GitHub repository named **`portfolio`**.
+2. GitHub Actions builds the Next.js site into static files (`out/`).
+3. GitHub Pages hosts those files.
+4. Anyone can open your portfolio with a normal website URL.
 
-### Publish / update steps
+---
 
-#### A. One-time GitHub settings
+### Step 1 — Create a GitHub repository
 
-1. Open the repo on GitHub: **Settings → Pages**
-2. Under **Build and deployment → Source**, choose **GitHub Actions**
-3. Ensure Actions are enabled for the repository
+1. Open [https://github.com/new](https://github.com/new) while logged in as **saifullah45152**.
+2. Set **Repository name** to exactly: `portfolio`  
+   (This name matters. The URL becomes `username.github.io/portfolio/`.)
+3. Choose **Public**.
+4. Do **not** add a README / .gitignore / license if this folder already has a project (avoids merge conflicts).
+5. Click **Create repository**.
 
-#### B. Push your code
+Your empty repo URL will look like:
+
+`https://github.com/saifullah45152/portfolio`
+
+---
+
+### Step 2 — Connect this local project to GitHub
+
+Open a terminal in your project folder (`c:\0_Flutter_Projects\portfolio`) and run:
+
+```bash
+git status
+```
+
+#### If this folder is already a git repo
+
+Set / update the remote to **your** GitHub repo:
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/saifullah45152/portfolio.git
+git branch -M master
+git add .
+git commit -m "Prepare portfolio for GitHub Pages"
+git push -u origin master
+```
+
+#### If git is not initialized yet
+
+```bash
+git init
+git remote add origin https://github.com/saifullah45152/portfolio.git
+git branch -M master
+git add .
+git commit -m "Initial portfolio commit"
+git push -u origin master
+```
+
+If GitHub asks you to sign in, complete login (browser / token), then push again.
+
+---
+
+### Step 3 — Update SEO links to your username (recommended)
+
+Before or after the first push, update URLs in `app/layout.tsx` from the old friend’s domain to yours:
+
+| Setting | Change to |
+|---------|-----------|
+| `metadataBase` | `https://saifullah45152.github.io/portfolio` |
+| `authors` name / url | Saif Ullah + your portfolio URL |
+| Open Graph `url` / `siteName` | Your name + `https://saifullah45152.github.io/portfolio/` |
+| Twitter / titles mentioning old name | Saif Ullah |
+
+`next.config.ts` already uses `basePath: '/portfolio'` — keep that **as long as the repo is named `portfolio`**.
+
+---
+
+### Step 4 — Enable GitHub Pages (one-time)
+
+1. Open your repo: [https://github.com/saifullah45152/portfolio](https://github.com/saifullah45152/portfolio)
+2. Go to **Settings** → **Pages**
+3. Under **Build and deployment** → **Source**, select **GitHub Actions**
+4. Make sure **Actions** are enabled for the repo (**Settings** → **Actions** → **General** → allow Actions)
+
+This matches how the friend’s site is deployed.
+
+---
+
+### Step 5 — Wait for the deploy workflow
+
+1. Open the **Actions** tab in your repo.
+2. You should see a workflow named **Deploy Next.js site to Pages** (from `.github/workflows/nextjs.yml`).
+3. Click it and wait until both **build** and **deploy** are green (✓).
+4. First deploy can take 1–3 minutes.
+
+If it fails, open the red job → read the error log → fix → push again.
+
+---
+
+### Step 6 — Open your live website
+
+When the workflow succeeds, open:
+
+**https://saifullah45152.github.io/portfolio/**
+
+That is the same pattern as your friend’s link:
+
+`https://waqadarshad.github.io/portfolio/`  
+→ `https://YOUR_USERNAME.github.io/REPO_NAME/`
+
+---
+
+### Step 7 — Update the site later (any time)
+
+After you edit content locally:
 
 ```bash
 git add .
-git commit -m "Update portfolio"
+git commit -m "Update portfolio content"
 git push origin master
 ```
 
-#### C. Wait for the workflow
+GitHub Actions will rebuild and republish automatically. Refresh the live URL after the Action turns green.
 
-1. Open **Actions** tab on GitHub
-2. Watch **Deploy Next.js site to Pages**
-3. When green, site is live at:
+---
 
-**https://waqadarshad.github.io/portfolio/**
+### What is already configured in this project
 
-### If the repo name or username changes
+| File | Purpose |
+|------|---------|
+| `next.config.ts` | `output: 'export'`, `basePath: '/portfolio'`, unoptimized images |
+| `.github/workflows/nextjs.yml` | On push to `master`, build Next.js and deploy `./out` to Pages |
+| `app/layout.tsx` | Site title / SEO metadata |
 
-Update these to match:
+You do **not** need to buy a domain or pay for hosting for this setup.
 
-| File | What to change |
-|------|----------------|
-| `next.config.ts` | `basePath` and `assetPrefix` (e.g. `/new-repo-name`) |
-| `app/layout.tsx` | `metadataBase`, Open Graph / author URLs |
-| `components/sections/Projects.tsx` | Uses `nextConfig.basePath` for image paths — usually fine if config is correct |
+---
 
-### User site vs project site
+### Common problems
 
-- **Project site (current):** `username.github.io/repo-name` → keep `basePath: '/portfolio'`
-- **User site:** `username.github.io` (repo named `username.github.io`) → set `basePath` and `assetPrefix` to `''`
+| Problem | Fix |
+|---------|-----|
+| Site 404 after deploy | Confirm repo name is `portfolio` and Pages source is **GitHub Actions** |
+| CSS / images broken | Keep `basePath` / `assetPrefix` as `/portfolio` in production |
+| Workflow never runs | Push to branch **`master`** (workflow listens to `master`), or run **Actions → workflow → Run workflow** |
+| Wrong username in URL | URL always uses your GitHub username: `saifullah45152.github.io` |
+| Repo name is not `portfolio` | Either rename the repo to `portfolio`, or change `basePath` / `assetPrefix` in `next.config.ts` to `/your-repo-name` |
 
-### Alternative: deploy with Vercel
+---
 
-You can also connect the same GitHub repo to [Vercel](https://vercel.com). For Vercel you typically **remove or adjust** static-export/`basePath` settings, because Vercel can run Next.js as a full app. GitHub Pages is already the primary path for this project.
+### Optional: custom domain later
+
+You can keep the free `*.github.io` URL, or later add a custom domain in **Settings → Pages → Custom domain**. Not required to publish.
+
+### Alternative: Vercel
+
+You can also deploy with [Vercel](https://vercel.com) by connecting the same GitHub repo. For Vercel you usually adjust/remove static-export `basePath` settings. **GitHub Pages is the path that matches your friend’s setup.**
 
 ---
 
@@ -207,4 +313,5 @@ Project images are expected under paths like `/images/projects/...` (with `baseP
 | Backend language? | **None** — static frontend only |
 | Styling? | **Tailwind CSS v4** |
 | Run locally? | `npm install` → `npm run dev` → http://localhost:3000 |
-| Publish on GitHub? | Enable Pages (Actions) → push to `master` → live at `https://waqadarshad.github.io/portfolio/` |
+| Publish as website? | Create public repo `portfolio` → enable Pages (GitHub Actions) → push to `master` → live at `https://saifullah45152.github.io/portfolio/` |
+| Friend’s example? | [https://waqadarshad.github.io/portfolio/](https://waqadarshad.github.io/portfolio/) |
